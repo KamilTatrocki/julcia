@@ -79,7 +79,7 @@ class Candlestick {
         
         this.isBullish = this.close <= this.open; // Canvas y is inverted
         
-        this.opacity = 0.05 + Math.random() * 0.15; // Subtle opacity
+        this.opacity = 0.2 + Math.random() * 0.3; // Increased visibility opacity
         this.speedX = 0.2 + Math.random() * 0.5; // Slow movement to the left
     }
 
@@ -129,7 +129,7 @@ function animateCanvas() {
     ctx.clearRect(0, 0, width, height);
     
     // Draw grid lines for finance feel
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)'; // Slightly more visible grid
     ctx.lineWidth = 1;
     for(let i=0; i<height; i+=50) {
         ctx.beginPath();
