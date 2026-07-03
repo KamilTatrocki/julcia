@@ -46,6 +46,25 @@ const revealOnScroll = () => {
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll(); // Trigger on load
 
+// Progress Bar Animation
+const progressBars = document.querySelectorAll('.progress-bar-fill');
+
+const animateProgressBars = () => {
+    const windowHeight = window.innerHeight;
+    const revealPoint = 100;
+
+    progressBars.forEach(bar => {
+        const barTop = bar.getBoundingClientRect().top;
+        if (barTop < windowHeight - revealPoint) {
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width;
+        }
+    });
+};
+
+window.addEventListener('scroll', animateProgressBars);
+animateProgressBars(); // Trigger on load
+
 // --------------------------------------------------------
 // Candlestick Chart Canvas Animation
 // --------------------------------------------------------

@@ -7,7 +7,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,7 +24,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills & Interests</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
@@ -35,7 +35,7 @@
     </header>
 
     <main class="content-wrapper">
-        <!-- Hero Section -->
+        <!-- Hero Section (Glassmorphism & Glowing Pic) -->
         <section id="about" class="hero-section reveal">
             <div class="hero-content glass-card">
                 <div class="profile-img-container">
@@ -55,14 +55,14 @@
             </div>
         </section>
 
-        <!-- Professional Experience Section -->
+        <!-- Professional Experience Section (Alternating Timeline) -->
         <section id="experience" class="section reveal">
             <h2 class="section-title">Professional Experience</h2>
             
-            <div class="timeline">
-                <div class="timeline-item glass-card">
+            <div class="timeline alt-timeline">
+                <div class="timeline-item left reveal">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-content glass-card">
                         <h3>Finance Assistant / Intern</h3>
                         <h4 class="company">PG Partner Gospodarczy</h4>
                         <p class="role-desc"><em>Responsibilities & Achievements:</em></p>
@@ -74,9 +74,9 @@
                     </div>
                 </div>
 
-                <div class="timeline-item glass-card">
+                <div class="timeline-item right reveal">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-content glass-card">
                         <h3>Freelance Educator <span class="date">2025 – Present</span></h3>
                         <h4 class="company">Online Math Tutor</h4>
                         <ul>
@@ -87,9 +87,9 @@
                     </div>
                 </div>
 
-                <div class="timeline-item glass-card">
+                <div class="timeline-item left reveal">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-content glass-card">
                         <h3>Hospitality & Customer Service <span class="date">2023 – 2024</span></h3>
                         <h4 class="company">Barista – "Gałka" Świdnica</h4>
                         <ul>
@@ -101,87 +101,101 @@
             </div>
         </section>
 
-        <!-- Education & Certifications Section -->
-        <section id="education" class="section reveal">
-            <h2 class="section-title">Education & Qualifications</h2>
-            
-            <div class="grid-2-cols">
-                <div class="glass-card education-card">
-                    <div class="card-icon">🎓</div>
-                    <h3>Academic Degree</h3>
-                    <h4>Wroclaw University of Economics</h4>
-                    <p>Bachelor of Finance and Accounting (2023 – Present)</p>
-                </div>
+        <!-- Education Section -->
+        <section id="education" class="section reveal full-width-section">
+            <div class="education-container">
+                <div class="edu-massive-header">WROCLAW<br>UNIVERSITY</div>
                 
-                <div class="glass-card education-card">
-                    <div class="card-icon">📜</div>
-                    <h3>Professional Accreditations</h3>
-                    <h4>Professional Development</h4>
-                    <ul>
-                        <li><strong>ACCA:</strong> Currently in the process of obtaining ACCA certificates.</li>
-                    </ul>
+                <div class="edu-content">
+                    <div class="edu-block highlight-block reveal">
+                        <div class="icon">🎓</div>
+                        <h3>Bachelor of Finance & Accounting</h3>
+                        <p class="edu-date">2023 – Present</p>
+                        <p class="edu-desc">Solid academic foundation in finance, corporate valuation, and accounting structures.</p>
+                    </div>
+
+                    <div class="edu-block acca-block reveal">
+                        <div class="icon">📜</div>
+                        <h3>Professional Development</h3>
+                        <h4 class="gold-text">ACCA Certification</h4>
+                        <p class="edu-desc">Currently in the process of obtaining prestigious ACCA certificates to advance my career as a financial analyst.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills & Languages Section -->
+        <!-- Skills & Languages Section (Progress Bars & Tags) -->
         <section id="skills" class="section reveal">
             <h2 class="section-title">Skills & Core Competencies</h2>
             
-            <div class="grid-3-cols">
-                <div class="glass-card skill-card">
-                    <h3>Technical & Soft Skills</h3>
-                    <ul class="custom-list">
-                        <li><strong>Data Analysis:</strong> Basic programming skills in R and Python.</li>
-                        <li><strong>Software:</strong> Proficient knowledge of the MS Office suite (Excel, Word, PowerPoint).</li>
-                        <li><strong>Core Strengths:</strong> Analytical thinking skills and strong work organization.</li>
-                    </ul>
+            <div class="skills-container">
+                <div class="skills-column">
+                    <h3 class="subsection-title">Technical Skills</h3>
+                    <div class="progress-wrapper">
+                        <div class="progress-info">
+                            <span>Data Analysis (R, Python)</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-wrapper">
+                        <div class="progress-info">
+                            <span>MS Office (Excel, Word, PowerPoint)</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-wrapper">
+                        <div class="progress-info">
+                            <span>Analytical Thinking</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-wrapper">
+                        <div class="progress-info">
+                            <span>Work Organization</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" data-width="95%"></div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="glass-card skill-card">
-                    <h3>Languages</h3>
-                    <ul class="custom-list">
-                        <li><strong>English</strong></li>
-                        <li><strong>German</strong></li>
-                    </ul>
-                </div>
+                <div class="skills-column">
+                    <h3 class="subsection-title">Languages</h3>
+                    <div class="tags-container">
+                        <span class="tag language-tag">English</span>
+                        <span class="tag language-tag">German</span>
+                    </div>
 
-                <div class="glass-card skill-card">
-                    <h3>Interests</h3>
-                    <ul class="custom-list">
-                        <li>Financial analysis and corporate valuation.</li>
-                        <li>Management accounting and cost accounting structures.</li>
-                        <li>Private equity funds and market trends.</li>
-                        <li>Latte art and active participation in barista courses.</li>
-                    </ul>
+                    <h3 class="subsection-title mt-40">Interests</h3>
+                    <div class="tags-container interests-tags">
+                        <span class="tag">Financial Analysis</span>
+                        <span class="tag">Corporate Valuation</span>
+                        <span class="tag">Management Accounting</span>
+                        <span class="tag">Private Equity Funds</span>
+                        <span class="tag">Market Trends</span>
+                        <span class="tag">Latte Art</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section contact-section reveal">
-            <div class="glass-card contact-card">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="contact-desc">Feel free to reach out for internship opportunities, collaborations, or professional inquiries.</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <span class="icon">📞</span>
-                        <a href="tel:+48536142627">+48 536 142 627</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">✉️</span>
-                        <a href="mailto:juliapietrusa12@gmail.com">juliapietrusa12@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">📍</span>
-                        <span>Ślężna 116/42, Wrocław</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">🔗</span>
-                        <a href="https://www.linkedin.com/in/julia-pietrusa-b0bb3b380/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-                    </div>
-                </div>
+        <!-- Contact Section (Massive Typography) -->
+        <section id="contact" class="section contact-massive reveal">
+            <h2 class="massive-text">LET'S<br>CONNECT.</h2>
+            <div class="contact-links-row">
+                <a href="mailto:juliapietrusa12@gmail.com" class="hover-underline">juliapietrusa12@gmail.com</a>
+                <span class="separator">/</span>
+                <a href="tel:+48536142627" class="hover-underline">+48 536 142 627</a>
+                <span class="separator">/</span>
+                <a href="https://www.linkedin.com/in/julia-pietrusa-b0bb3b380/" target="_blank" rel="noopener noreferrer" class="hover-underline">LinkedIn</a>
             </div>
+            <p class="location-text">📍 Ślężna 116/42, Wrocław</p>
         </section>
     </main>
 
