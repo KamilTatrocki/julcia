@@ -1,245 +1,188 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium 3D Trading Background</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #04060a;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-        
-        #canvas-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            font-weight: 900;
-            letter-spacing: -2px;
-            background: linear-gradient(135deg, #ffffff 0%, #64748b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            color: #00ffcc;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        p {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: #94a3b8;
-            font-weight: 400;
-        }
-
-        .card {
-            background: rgba(8, 12, 21, 0.5);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 50px;
-            border-radius: 24px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-        }
-    </style>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
-            }
-        }
-    </script>
+    <title>Julia Pietrusa | Portfolio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Background Canvas for Candlestick Chart -->
+    <canvas id="financial-canvas"></canvas>
 
-    <div id="canvas-container"></div>
+    <!-- Global Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Julia Pietrusa</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills & Interests</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-    <div class="content">
-        <section>
-            <div class="card">
-                <h1>Kwantowy Wymiar Analizy</h1>
-                <p>Przewijaj powoli, aby zanurzyć się w płynnej strukturze danych rynkowych. Doświadcz stabilności i przejrzystości architektury nowej generacji.</p>
+    <main class="content-wrapper">
+        <!-- Hero Section -->
+        <section id="about" class="hero-section reveal">
+            <div class="hero-content glass-card">
+                <div class="profile-img-container">
+                    <div class="glow-ring"></div>
+                    <img src="jula.jpg" alt="Julia Pietrusa" class="profile-img">
+                </div>
+                <div class="hero-text">
+                    <h1>Hello, I'm <span class="accent-gold">Julia Pietrusa</span></h1>
+                    <h2>Finance & Accounting Student | Aspiring Financial Analyst</h2>
+                    <p>
+                        I am a motivated Finance and Accounting student at the Wroclaw University of Economics, currently pursuing my ACCA certification. Passionate about financial analysis, management accounting, and private equity, I combine a solid academic foundation with strong analytical skills and practical programming capabilities in R and Python. I am eager to leverage my fast learning abilities and excellent organization in a professional financial environment.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <section>
-            <div class="card">
-                <h2>Algorytmiczna Architektura</h2>
-                <p>Nasze inteligentne środowisko przetwarza tysiące zmiennych na sekundę, przekształcając chaos chaosu rynkowego w harmonijny i przewidywalny wektor wzrostu.</p>
+        <!-- Professional Experience Section -->
+        <section id="experience" class="section reveal">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item glass-card">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Finance Assistant / Intern</h3>
+                        <h4 class="company">PG Partner Gospodarczy</h4>
+                        <p class="role-desc"><em>Responsibilities & Achievements:</em></p>
+                        <ul>
+                            <li>Processing and posting invoices accurately to maintain clean ledgers.</li>
+                            <li>Maintaining professional communication with corporate clients.</li>
+                            <li>Monitoring settlements and strictly managing payment deadlines.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-card">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Freelance Educator <span class="date">2025 – Present</span></h3>
+                        <h4 class="company">Online Math Tutor</h4>
+                        <ul>
+                            <li>Preparing customized lesson plans and learning materials adapted to individual student needs.</li>
+                            <li>Explaining complex mathematical concepts in a clear, structured, and accessible manner.</li>
+                            <li>Assisting students in high-stakes exam preparation and successfully improving academic performance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-card">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Hospitality & Customer Service <span class="date">2023 – 2024</span></h3>
+                        <h4 class="company">Barista – "Gałka" Świdnica</h4>
+                        <ul>
+                            <li>Preparing and serving high-quality coffee and specialty beverages using advanced latte art techniques.</li>
+                            <li>Providing exceptional customer service, managing menu selections, and handling efficient cash register transactions.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section>
-            <div class="card">
-                <h2>Decentralizacja i Skala</h2>
-                <p>Zabezpiecz swoją pozycję w ekosystemie, który nie tylko reaguje na zmiany, ale wyznacza nowe trajektorie ruchu kapitału na całym świecie.</p>
+        <!-- Education & Certifications Section -->
+        <section id="education" class="section reveal">
+            <h2 class="section-title">Education & Qualifications</h2>
+            
+            <div class="grid-2-cols">
+                <div class="glass-card education-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Academic Degree</h3>
+                    <h4>Wroclaw University of Economics</h4>
+                    <p>Bachelor of Finance and Accounting (2023 – Present)</p>
+                </div>
+                
+                <div class="glass-card education-card">
+                    <div class="card-icon">📜</div>
+                    <h3>Professional Accreditations</h3>
+                    <h4>Professional Development</h4>
+                    <ul>
+                        <li><strong>ACCA:</strong> Currently in the process of obtaining ACCA certificates.</li>
+                    </ul>
+                </div>
             </div>
         </section>
-    </div>
 
-    <script type="module">
-        import * as THREE from 'three';
-
-        const container = document.getElementById('canvas-container');
-        
-        const scene = new THREE.Scene();
-        scene.fog = new THREE.FogExp2(0x04060a, 0.015);
-
-        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.4;
-        container.appendChild(renderer.domElement);
-
-        const ambientLight = new THREE.AmbientLight(0x0a1128, 2.0);
-        scene.add(ambientLight);
-
-        const mainLight = new THREE.PointLight(0xffffff, 15, 50);
-        scene.add(mainLight);
-
-        const points = [];
-        let currentPrice = 15;
-        const totalPoints = 30;
-        const spacingX = 2.2;
-
-        const candleGroup = new THREE.Group();
-        scene.add(candleGroup);
-
-        for (let i = -10; i < totalPoints; i++) {
-            let change = (Math.random() - 0.44) * 4.5;
+        <!-- Skills & Languages Section -->
+        <section id="skills" class="section reveal">
+            <h2 class="section-title">Skills & Core Competencies</h2>
             
-            if (i > 20 && i < 60) change += 0.9;
-            if (i > 80 && i < 120) change -= 0.8;
+            <div class="grid-3-cols">
+                <div class="glass-card skill-card">
+                    <h3>Technical & Soft Skills</h3>
+                    <ul class="custom-list">
+                        <li><strong>Data Analysis:</strong> Basic programming skills in R and Python.</li>
+                        <li><strong>Software:</strong> Proficient knowledge of the MS Office suite (Excel, Word, PowerPoint).</li>
+                        <li><strong>Core Strengths:</strong> Analytical thinking skills and strong work organization.</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card skill-card">
+                    <h3>Languages</h3>
+                    <ul class="custom-list">
+                        <li><strong>English</strong></li>
+                        <li><strong>German</strong></li>
+                    </ul>
+                </div>
 
-            const openPrice = currentPrice;
-            currentPrice += change;
-            
-            if (currentPrice < 5) currentPrice = 5;
-            if (currentPrice > 55) currentPrice = 55;
-            const closePrice = currentPrice;
+                <div class="glass-card skill-card">
+                    <h3>Interests</h3>
+                    <ul class="custom-list">
+                        <li>Financial analysis and corporate valuation.</li>
+                        <li>Management accounting and cost accounting structures.</li>
+                        <li>Private equity funds and market trends.</li>
+                        <li>Latte art and active participation in barista courses.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-            const x = i * spacingX;
-            const y = (openPrice + closePrice) / 2;
-            const z = Math.sin(i * 0.15) * 4; 
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section reveal">
+            <div class="glass-card contact-card">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-desc">Feel free to reach out for internship opportunities, collaborations, or professional inquiries.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="icon">📞</span>
+                        <a href="tel:+48536142627">+48 536 142 627</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:juliapietrusa12@gmail.com">juliapietrusa12@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <span>Ślężna 116/42, Wrocław</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-            points.push(new THREE.Vector3(x, y, z));
+    <footer>
+        <p>&copy; 2026 Julia Pietrusa. All rights reserved.</p>
+    </footer>
 
-            const isUp = closePrice >= openPrice;
-            const candleHeight = Math.max(0.4, Math.abs(closePrice - openPrice));
-            
-            const candleGeo = new THREE.BoxGeometry(0.6, candleHeight, 0.6);
-            const candleMat = new THREE.MeshStandardMaterial({
-                color: isUp ? 0x00ffaa : 0xff2a5f,
-                emissive: isUp ? 0x005522 : 0x550011,
-                roughness: 0.1,
-                metalness: 0.9
-            });
-            
-            const candle = new THREE.Mesh(candleGeo, candleMat);
-            candle.position.set(x, y, z);
-            candleGroup.add(candle);
-
-            const highLowSpread = candleHeight + Math.random() * 3;
-            const lineGeo = new THREE.BufferGeometry().setFromPoints([
-                new THREE.Vector3(x, y - highLowSpread / 2, z),
-                new THREE.Vector3(x, y + highLowSpread / 2, z)
-            ]);
-            const lineMat = new THREE.LineBasicMaterial({ 
-                color: isUp ? 0x00ffaa : 0xff2a5f,
-                transparent: true,
-                opacity: 0.5
-            });
-            const wick = new THREE.Line(lineGeo, lineMat);
-            candleGroup.add(wick);
-        }
-
-        const gridXSize = totalPoints * spacingX;
-        const gridHelper = new THREE.GridHelper(gridXSize, 60, 0x1e293b, 0x090d16);
-        gridHelper.position.set(gridXSize / 2, 15, -12);
-        gridHelper.rotation.x = Math.PI / 2;
-        scene.add(gridHelper);
-
-        let targetCameraX = 0;
-        let targetCameraY = 15;
-
-        camera.position.set(0, 15, 35);
-        camera.lookAt(10, 15, 0);
-
-        function updateCameraPosition() {
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = window.scrollY / (maxScroll || 1);
-            
-            const maxExtentX = (totalPoints - 22) * spacingX;
-            targetCameraX = scrollPercent * maxExtentX;
-
-            const currentPointIndex = Math.min(
-                points.length - 1,
-                Math.max(0, Math.floor(scrollPercent * points.length))
-            );
-            
-            if (points[currentPointIndex]) {
-                targetCameraY = points[currentPointIndex].y;
-            }
-        }
-
-        window.addEventListener('scroll', updateCameraPosition);
-        updateCameraPosition();
-
-        function animate() {
-            requestAnimationFrame(animate);
-
-            camera.position.x += (targetCameraX - camera.position.x) * 0.02;
-            camera.position.y += (targetCameraY - camera.position.y) * 0.02;
-
-            mainLight.position.set(camera.position.x + 5, camera.position.y + 2, 8);
-
-            camera.lookAt(camera.position.x + 12, camera.position.y, -2);
-            
-            camera.rotation.z = Math.sin(camera.position.x * 0.02) * 0.02;
-
-            renderer.render(scene, camera);
-        }
-
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            updateCameraPosition();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
