@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wykres Świecowy 3D jako Tło</title>
+    <title>Premium 3D Trading Background</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #080b11;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #04060a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -40,35 +40,37 @@
         }
 
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            background: linear-gradient(180deg, #ffffff, #a0aec0);
+            font-size: 4rem;
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #ffffff 0%, #64748b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         h2 {
-            font-size: 2.2rem;
-            color: #00ffaa;
-            font-weight: 700;
+            font-size: 2.5rem;
+            color: #00ffcc;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         p {
-            font-size: 1.15rem;
-            line-height: 1.7;
+            font-size: 1.25rem;
+            line-height: 1.8;
             color: #94a3b8;
+            font-weight: 400;
         }
 
         .card {
-            background: rgba(13, 18, 28, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            background: rgba(8, 12, 21, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
     </style>
     <script type="importmap">
@@ -86,22 +88,22 @@
     <div class="content">
         <section>
             <div class="card">
-                <h1>Terminal Kwantowy</h1>
-                <p>Przewijaj stronę, aby przeanalizować trajektorię rynku. Wizualizacja struktur rynkowych w czasie rzeczywistym pozwala dostrzec wzorce niewidoczne na płaskim ekranie.</p>
+                <h1>Kwantowy Wymiar Analizy</h1>
+                <p>Przewijaj powoli, aby zanurzyć się w płynnej strukturze danych rynkowych. Doświadcz stabilności i przejrzystości architektury nowej generacji.</p>
             </div>
         </section>
 
         <section>
             <div class="card">
-                <h2>Strefa Płynności</h2>
-                <p>Wykres przebija lokalne opory. Zielone słupki oznaczają wejście dużego kapitału (instytucjonalnego) i generowanie silnego impulsu wzrostowego.</p>
+                <h2>Algorytmiczna Architektura</h2>
+                <p>Nasze inteligentne środowisko przetwarza tysiące zmiennych na sekundę, przekształcając chaos chaosu rynkowego w harmonijny i przewidywalny wektor wzrostu.</p>
             </div>
         </section>
 
         <section>
             <div class="card">
-                <h2>Zarządzanie Ryzykiem</h2>
-                <p>Geometria 3D pozwala precyzyjnie wyznaczyć linie trendu oraz siatki zniesień Fibonacciego wzdłuż osi czasu. Zabezpiecz swoje pozycje przed nadchodzącą zmiennością.</p>
+                <h2>Decentralizacja i Skala</h2>
+                <p>Zabezpiecz swoją pozycję w ekosystemie, który nie tylko reaguje na zmiany, ale wyznacza nowe trajektorie ruchu kapitału na całym świecie.</p>
             </div>
         </section>
     </div>
@@ -112,34 +114,45 @@
         const container = document.getElementById('canvas-container');
         
         const scene = new THREE.Scene();
-        scene.fog = new THREE.FogExp2(0x080b11, 0.03);
+        scene.fog = new THREE.FogExp2(0x04060a, 0.015);
 
-        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
         renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.4;
         container.appendChild(renderer.domElement);
 
-        const points = [];
-        let currentPrice = 20;
-        const totalPoints = 140;
-        const spacingX = 2.0;
+        const ambientLight = new THREE.AmbientLight(0x0a1128, 2.0);
+        scene.add(ambientLight);
 
-        for (let i = 0; i < totalPoints; i++) {
-            let change = (Math.random() - 0.45) * 5;
+        const mainLight = new THREE.PointLight(0xffffff, 15, 50);
+        scene.add(mainLight);
+
+        const points = [];
+        let currentPrice = 15;
+        const totalPoints = 30;
+        const spacingX = 2.2;
+
+        const candleGroup = new THREE.Group();
+        scene.add(candleGroup);
+
+        for (let i = -10; i < totalPoints; i++) {
+            let change = (Math.random() - 0.44) * 4.5;
             
-            if (i > 25 && i < 55) change += 1.2; 
-            if (i > 75 && i < 105) change -= 1.0; 
+            if (i > 20 && i < 60) change += 0.9;
+            if (i > 80 && i < 120) change -= 0.8;
 
             const openPrice = currentPrice;
             currentPrice += change;
             
             if (currentPrice < 5) currentPrice = 5;
-            if (currentPrice > 65) currentPrice = 65;
+            if (currentPrice > 55) currentPrice = 55;
             const closePrice = currentPrice;
 
             const x = i * spacingX;
             const y = (openPrice + closePrice) / 2;
-            const z = 0;
+            const z = Math.sin(i * 0.15) * 4; 
 
             points.push(new THREE.Vector3(x, y, z));
 
@@ -147,12 +160,16 @@
             const candleHeight = Math.max(0.4, Math.abs(closePrice - openPrice));
             
             const candleGeo = new THREE.BoxGeometry(0.6, candleHeight, 0.6);
-            const candleMat = new THREE.MeshBasicMaterial({
-                color: isUp ? 0x26a69a : 0xef5350
+            const candleMat = new THREE.MeshStandardMaterial({
+                color: isUp ? 0x00ffaa : 0xff2a5f,
+                emissive: isUp ? 0x005522 : 0x550011,
+                roughness: 0.1,
+                metalness: 0.9
             });
+            
             const candle = new THREE.Mesh(candleGeo, candleMat);
             candle.position.set(x, y, z);
-            scene.add(candle);
+            candleGroup.add(candle);
 
             const highLowSpread = candleHeight + Math.random() * 3;
             const lineGeo = new THREE.BufferGeometry().setFromPoints([
@@ -160,34 +177,36 @@
                 new THREE.Vector3(x, y + highLowSpread / 2, z)
             ]);
             const lineMat = new THREE.LineBasicMaterial({ 
-                color: isUp ? 0x26a69a : 0xef5350,
-                linewidth: 1
+                color: isUp ? 0x00ffaa : 0xff2a5f,
+                transparent: true,
+                opacity: 0.5
             });
             const wick = new THREE.Line(lineGeo, lineMat);
-            scene.add(wick);
+            candleGroup.add(wick);
         }
 
         const gridXSize = totalPoints * spacingX;
-        const gridHelper = new THREE.GridHelper(gridXSize, 80, 0x1e293b, 0x111827);
-        gridHelper.position.set(gridXSize / 2, 25, -2);
-        gridHelper.rotation.x = Math.PI / 2; 
+        const gridHelper = new THREE.GridHelper(gridXSize, 60, 0x1e293b, 0x090d16);
+        gridHelper.position.set(gridXSize / 2, 15, -12);
+        gridHelper.rotation.x = Math.PI / 2;
         scene.add(gridHelper);
 
         let targetCameraX = 0;
-        let targetCameraY = 20;
+        let targetCameraY = 15;
 
-        camera.position.set(0, 20, 30);
+        camera.position.set(0, 15, 35);
+        camera.lookAt(10, 15, 0);
 
         function updateCameraPosition() {
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
             const scrollPercent = window.scrollY / (maxScroll || 1);
             
-            const maxExtentX = (totalPoints - 15) * spacingX;
+            const maxExtentX = (totalPoints - 22) * spacingX;
             targetCameraX = scrollPercent * maxExtentX;
 
             const currentPointIndex = Math.min(
-                totalPoints - 1,
-                Math.max(0, Math.floor(scrollPercent * totalPoints))
+                points.length - 1,
+                Math.max(0, Math.floor(scrollPercent * points.length))
             );
             
             if (points[currentPointIndex]) {
@@ -201,10 +220,14 @@
         function animate() {
             requestAnimationFrame(animate);
 
-            camera.position.x += (targetCameraX - camera.position.x) * 0.05;
-            camera.position.y += (targetCameraY - camera.position.y) * 0.05;
+            camera.position.x += (targetCameraX - camera.position.x) * 0.02;
+            camera.position.y += (targetCameraY - camera.position.y) * 0.02;
+
+            mainLight.position.set(camera.position.x + 5, camera.position.y + 2, 8);
+
+            camera.lookAt(camera.position.x + 12, camera.position.y, -2);
             
-            camera.lookAt(camera.position.x + 6, camera.position.y, 0);
+            camera.rotation.z = Math.sin(camera.position.x * 0.02) * 0.02;
 
             renderer.render(scene, camera);
         }
