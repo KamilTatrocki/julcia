@@ -50,6 +50,36 @@
                     </p>
                     <div class="hero-actions">
                         <a href="https://www.linkedin.com/in/julia-pietrusa-b0bb3b380/" target="_blank" rel="noopener noreferrer" class="btn primary-btn">Connect on LinkedIn</a>
+                        
+                        <!-- Premium Stock Trend Line Graphic -->
+                        <div class="chart-wrapper">
+                            <svg class="stock-trend-line" viewBox="-20 -20 240 140" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="trendGradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="var(--accent-primary)" stop-opacity="0.5"/>
+                                        <stop offset="100%" stop-color="var(--accent-primary)" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <!-- Extended filter boundaries to prevent cropping -->
+                                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <!-- Area under line -->
+                                <polygon class="trend-area" points="0,90 25,75 45,85 70,55 90,65 115,35 135,45 160,20 180,30 200,5 200,100 0,100" fill="url(#trendGradient)"/>
+                                <!-- Line -->
+                                <polyline class="trend-path" points="0,90 25,75 45,85 70,55 90,65 115,35 135,45 160,20 180,30 200,5" fill="none" stroke="var(--accent-primary)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+                                <!-- Blinking dot at the end -->
+                                <circle cx="200" cy="5" r="5" fill="#fff" filter="url(#glow)">
+                                    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+                                    <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="200" cy="5" r="3" fill="var(--accent-primary)" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,6 +142,21 @@
                         <h3>Bachelor of Finance & Accounting</h3>
                         <p class="edu-date">2023 – Present</p>
                         <p class="edu-desc">Solid academic foundation in finance, corporate valuation, and accounting structures.</p>
+
+                        <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--glass-border); text-align: left;">
+                            <h4 class="gold-text" style="margin-bottom: 10px;">Bachelor's Thesis Project</h4>
+                            <p style="color: var(--text-primary); font-weight: 500; margin-bottom: 10px; font-size: 1.05rem;">Analysis of the underpricing phenomenon and the role of PE funds on the Warsaw Stock Exchange.</p>
+                            <p style="margin-bottom: 15px; font-size: 0.95rem;">Investigated whether the involvement of Private Equity funds in companies debuting on the WSE reduces the scale of underpricing and limits information asymmetry.</p>
+                            
+                            <h4 style="font-size: 1rem; margin-bottom: 8px;">Scope & Implementation</h4>
+                            <ul style="padding-left: 20px; color: var(--text-secondary); margin-bottom: 15px; font-size: 0.95rem; list-style-type: disc;">
+                                <li style="margin-bottom: 5px;"><strong>Theory:</strong> IPO mechanisms, agency theory, fundamental valuation, behavioral factors.</li>
+                                <li style="margin-bottom: 5px;"><strong>Data Analysis:</strong> Wide sample of PE-backed and unsupported companies (e.g., Allegro, Shoper, JSW, Pepco).</li>
+                                <li style="margin-bottom: 5px;"><strong>Methodology:</strong> Statistical hypothesis testing (Shapiro-Wilk, Levene's, Wilcoxon rank-sum, KS2 tests).</li>
+                            </ul>
+                            
+                            <p style="font-style: italic; font-size: 0.9rem;">Practical assessment of the "certification effect", enhancing analytical and statistical skills in corporate finance.</p>
+                        </div>
                     </div>
 
                     <div class="edu-block acca-block reveal">

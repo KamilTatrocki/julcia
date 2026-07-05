@@ -231,6 +231,45 @@ p {
     to { transform: rotate(360deg); }
 }
 
+/* Stock Trend Line Graphic */
+.chart-wrapper {
+    width: 160px;
+    height: 80px;
+    filter: drop-shadow(0 10px 15px rgba(16,185,129,0.15));
+}
+
+.stock-trend-line {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    animation: float-chart 4s ease-in-out infinite;
+}
+
+.trend-path {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: drawLine 2s ease-out forwards;
+}
+
+.trend-area {
+    opacity: 0;
+    animation: fadeArea 1s ease-out 1.5s forwards;
+}
+
+@keyframes drawLine {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeArea {
+    to { opacity: 1; }
+}
+
+@keyframes float-chart {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
 .hero-text h1 { margin-bottom: 10px; }
 .hero-text h2 {
     font-size: 1.5rem;
@@ -241,7 +280,11 @@ p {
 
 /* Buttons */
 .hero-actions {
-    margin-top: 30px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .btn {
@@ -627,5 +670,7 @@ p {
     .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     
     .profile-img { width: 200px; height: 200px; }
+    .hero-actions { justify-content: center; }
+    .chart-wrapper { width: 120px; height: 60px; }
     .edu-massive-header { font-size: 4rem; }
 }
