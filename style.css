@@ -673,4 +673,5 @@ p {
     .hero-actions { justify-content: center; }
     .chart-wrapper { width: 180px; height: 90px; }
     .edu-massive-header { font-size: 4rem; }
+    .massive-text { font-size: 18vw; word-break: break-word; overflow-wrap: break-word; }
 }
