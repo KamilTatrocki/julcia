@@ -233,8 +233,8 @@ p {
 
 /* Stock Trend Line Graphic */
 .chart-wrapper {
-    width: 160px;
-    height: 80px;
+    width: 240px;
+    height: 120px;
     filter: drop-shadow(0 10px 15px rgba(16,185,129,0.15));
 }
 
@@ -671,6 +671,6 @@ p {
     
     .profile-img { width: 200px; height: 200px; }
     .hero-actions { justify-content: center; }
-    .chart-wrapper { width: 120px; height: 60px; }
+    .chart-wrapper { width: 180px; height: 90px; }
     .edu-massive-header { font-size: 4rem; }
 }
